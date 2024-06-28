@@ -10,12 +10,20 @@ public class LoginScreenPO extends PageBase {
         super(driver.get());
     }
 
-    @AndroidFindBy(xpath = "//*[@resource-id='Profile_Label']")
-    private WebElement menuIcon;
+    @AndroidFindBy(xpath = "//*[@resource-id= 'radio_agree_button']")
+    private WebElement agreeButton;
 
-    public void clickMenu(String menu) {
-        Assert.assertTrue(clickElement(menu, menuIcon, false), "Unable to click the " + menu + " in the Home screen");
+    @AndroidFindBy(xpath = "//*[@resource-id= 'get_started_button']")
+    private WebElement getStarted;
+
+    public void clickAgreeButton() {
+        Assert.assertTrue(clickElement("agreeButton", agreeButton, false), "Unable to click the reviewApplicants button in the Home screen");
     }
+
+    public void clickGetStarted(){
+        Assert.assertTrue(clickElement("getStarted",getStarted,false),"Unable to click get started button in home Screen");
+    }
+
 
 
 }
